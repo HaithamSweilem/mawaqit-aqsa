@@ -1,0 +1,12 @@
+{
+  "name": "mawaqit-aqsa",
+  "version": "1.0.0",
+  "description": "توقيت الصلاة الدهري حسب توقيت المسجد الأقصى المبارك",
+  "license": "Islamic Waqf",
+  "author": "Haitham Sweilem <https://github.com/HaithamSweilem>",
+  "type": "commonjs",
+  "main": "convert.js",
+  "scripts": {
+    "start": "node json_to_csv.js"
+  }
+}
