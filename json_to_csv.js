@@ -6,7 +6,7 @@ for (let i = 1; i <= 12; i++) {
 }
 
 function convertMonthFromJsonToCSV(monthNumber) {
-    const inputFilePath = `salat-${(monthNumber + "").padStart(2, '0')}.json`;
+    const inputFilePath = `${(monthNumber + "").padStart(2, '0')}.json`;
 
     if (!inputFilePath) {
         console.error('Please provide the path of the JSON input file containing prayer times (it should reside under the ./json dir).');
@@ -25,7 +25,7 @@ function convertMonthFromJsonToCSV(monthNumber) {
 
         try {
             const jsonArray = JSON.parse(data);
-            const csvRows = ['day,month,fajr,shuruk,zuhr,asr,maghrib,ishaa'];
+            const csvRows = ['Day,Fajr,Shuruk,Duhr,Asr,Maghrib,Isha'];
 
             jsonArray.forEach(item => {
                 for (const [dateStr, times] of Object.entries(item)) {
@@ -33,7 +33,7 @@ function convertMonthFromJsonToCSV(monthNumber) {
                     const day = parseInt(dayStr, 10);
                     const month = parseInt(monthStr, 10);
 
-                    const formatTime = (timeObj) => `"${timeObj.hour}:${timeObj.minute}"`;
+                    const formatTime = (timeObj) => `${timeObj.hour}:${timeObj.minute}`;
 
                     const row = [
                         day,
