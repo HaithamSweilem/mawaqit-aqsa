@@ -37,13 +37,12 @@ function convertMonthFromJsonToCSV(monthNumber) {
 
                     const row = [
                         day,
-                        month,
-                        formatTime(times.fajr),
-                        formatTime(times.shuruk),
-                        formatTime(times.zuhr),
-                        formatTime(times.asr),
-                        formatTime(times.maghrib),
-                        formatTime(times.ishaa)
+                        formatTime(times.Fajr),
+                        formatTime(times.Shuruk),
+                        formatTime(times.Duhr),
+                        formatTime(times.Asr),
+                        formatTime(times.Maghrib),
+                        formatTime(times.Isha)
                     ].join(',');
 
                     csvRows.push(row);
