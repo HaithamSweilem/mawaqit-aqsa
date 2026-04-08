@@ -4,13 +4,13 @@ const path = require('path');
 const inputFilePath = process.argv[2];
 
 if (!inputFilePath) {
-    console.error('Please provide the path of the JSON input file containing prayer times.');
+    console.error('Please provide the path of the JSON input file containing prayer times (it should reside under the ./json dir).');
     process.exit(1);
 }
 
-const absolutePath = path.resolve(inputFilePath);
+const absolutePath = path.resolve('./json/' + inputFilePath);
 const fileName = path.basename(absolutePath, path.extname(absolutePath));
-const outputFilePath = path.join(path.dirname(absolutePath), `${fileName}.csv`);
+const outputFilePath = path.join(path.dirname(absolutePath), '../csv', `${fileName}.csv`);
 
 fs.readFile(absolutePath, 'utf8', (err, data) => {
     if (err) {
@@ -45,7 +45,7 @@ fs.readFile(absolutePath, 'utf8', (err, data) => {
             }
         });
 
-        const csvContent = csvRows.join('\n');
+        const csvContent = csvRows.join('\n') + '\n';
 
         fs.writeFile(outputFilePath, csvContent, 'utf8', (err) => {
             if (err) {
