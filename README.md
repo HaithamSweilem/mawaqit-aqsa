@@ -11,3 +11,8 @@ To run:
 ```bash
 bun run start
 ```
+
+Or, using `npm`:
+```bash
+npm run start
+```
