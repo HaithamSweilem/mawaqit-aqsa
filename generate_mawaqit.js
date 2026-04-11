@@ -1,7 +1,6 @@
 import fs from 'fs';
 import path from 'path';
 import readline from 'readline';
-import {PrayerData} from "./schemas/prayerData.js";
 
 class MawaqitGenerator {
     /**
